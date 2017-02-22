@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml">
+ 
+	 Code test2
+    <ui:define name="content">
+        <h:dataTable var="__code" value="#{codeMst}"
+            rendered="#{not empty members}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{__code.id.codeId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{__code.codeName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">availableEndDatel</f:facet>
+                #{__member.availableEndDate}
+            </h:column>
+            <h:column>
+                <f:facet name="header">availableStartDate #</f:facet>
+                #{__member.availableStartDate}
+            </h:column>
+            <f:facet name="footer">
+            REST URL for all codess: <a
+                    href="#{request.contextPath}/">Top</a>
+            </f:facet>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
