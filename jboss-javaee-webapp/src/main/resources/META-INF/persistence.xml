@@ -38,14 +38,17 @@
       <class>org.jboss.tools.examples.model.QuestDtlTblPK</class>
       <class>org.jboss.tools.examples.model.QuestItemTbl</class>
       <class>org.jboss.tools.examples.model.QuestItemTblPK</class>
+      <exclude-unlisted-classes>true</exclude-unlisted-classes>
       <properties>
          <!-- Properties for Hibernate -->
-         <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-         <property name="hibernate.show_sql" value="false" />
+         <!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+         <!-- <property name="hibernate.show_sql" value="false" /> -->
          <property name="eclipselink.logging.connection" value="true"/>
          <property name="eclipselink.logging.level.sql" value="FINEST"/>
          <property name="eclipselink.jdbc.cache-statements" value="false"/>
          <property name="eclipselink.logging.level" value="FINEST"/>
+         <property name="javax.persistence.schema-generation.scripts.action" value="none"/>
+         <property name="javax.persistence.schema-generation.database.action" value="none"/>
       </properties>
    </persistence-unit>
 </persistence>
