@@ -216,6 +216,22 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${version.wildfly.maven.plugin}</version>
+		    <executions>
+        		<execution>
+	        	    <goals>
+	        	        <goal>deploy</goal>
+		            </goals>
+	        	    <phase>install</phase>
+		        </execution>
+		    </executions>
+		    <configuration>
+		        <force>true</force>
+	        	<hostname>ec2-13-113-46-79.ap-northeast-1.compute.amazonaws.com</hostname>
+		        <port>9990</port>
+		        <username>yanagi</username>
+		        <password>aifront2015</password>
+		        <filename>jboss-javaee-webapp.war</filename>
+		    </configuration>
             </plugin>
         </plugins>
     </build>
