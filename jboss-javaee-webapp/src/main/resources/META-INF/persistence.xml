@@ -21,6 +21,7 @@
         http://xmlns.jcp.org/xml/ns/persistence
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
    <persistence-unit name="primary">
+   	<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
    	<jta-data-source>java:/OracleDS</jta-data-source>
       <!-- If you are running in a production environment, add a managed
          data source, this example data source is just for development and testing! -->
@@ -42,7 +43,7 @@
       <properties>
          <!-- Properties for Hibernate -->
          <!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
-         <!-- <property name="hibernate.show_sql" value="false" /> -->
+         <property name="hibernate.show_sql" value="true" />
          <property name="eclipselink.logging.connection" value="true"/>
          <property name="eclipselink.logging.level.sql" value="FINEST"/>
          <property name="eclipselink.jdbc.cache-statements" value="false"/>

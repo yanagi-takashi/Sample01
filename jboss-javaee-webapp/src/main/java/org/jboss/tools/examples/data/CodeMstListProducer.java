@@ -28,12 +28,13 @@ public class CodeMstListProducer {
         return codemst;
     }
 
-    public void onMemberListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final CodeMst codemst) {
+    public void onCodeListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final CodeMst codemst) {
         retrieveAllCodeMstOrderedByName();
     }
 
     @PostConstruct
     public void retrieveAllCodeMstOrderedByName() {
-        codemst = codemstRepository.findAllOrderedByName();
+    //    codemst = codemstRepository.findAllOrderedByName();
+    	  codemst = codemstRepository.findAll();
     }
 }

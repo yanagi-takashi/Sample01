@@ -20,11 +20,32 @@
             </h:column>
             <h:column>
                 <f:facet name="header">availableEndDatel</f:facet>
-                #{__member.availableEndDate}
+                <h:outputText value="#{__code.availableEndDate}">
+                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
+                </h:outputText>
             </h:column>
             <h:column>
                 <f:facet name="header">availableStartDate #</f:facet>
-                #{__member.availableStartDate}
+                <h:outputText value="#{__code.availableStartDate}" >
+                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">createDate #</f:facet>
+                <h:outputText value="#{__code.createDate}" >
+                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">upadateDate #</f:facet>
+                <h:outputText value="#{__code.udpateDate}" >
+                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Delflg #</f:facet>
+                <h:outputText value="#{__code.delFlg}" >
+                </h:outputText>
             </h:column>
             <f:facet name="footer">
             REST URL for all codess: <a

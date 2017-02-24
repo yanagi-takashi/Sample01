@@ -12,14 +12,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 /**
  * The persistent class for the CODE_MST database table.
  *
  */
 @Entity
-@Table(name="CODE_MST")
-@NamedQuery(name="CodeMst.findAll", query="SELECT c FROM CodeMst c")
+@Table(name = "CODE_MST")
+@NamedQuery(name = "CodeMst.findAll", query = "SELECT c FROM CodeMst c")
 public class CodeMst implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -27,25 +26,25 @@ public class CodeMst implements Serializable {
 	private CodeMstPK id;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="AVAILABLE_END_DATE")
+	@Column(name = "AVAILABLE_END_DATE")
 	private Date availableEndDate;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="AVAILABLE_START_DATE")
+	@Column(name = "AVAILABLE_START_DATE")
 	private Date availableStartDate;
 
-	@Column(name="CODE_NAME")
+	@Column(name = "CODE_NAME")
 	private String codeName;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="CREATE_DATE")
+	@Column(name = "CREATE_DATE")
 	private Date createDate;
 
-	@Column(name="DEL_FLG")
+	@Column(name = "DEL_FLG")
 	private BigDecimal delFlg;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="UDPATE_DATE")
+	@Column(name = "UDPATE_DATE")
 	private Date udpateDate;
 
 	public CodeMst() {
@@ -91,8 +90,13 @@ public class CodeMst implements Serializable {
 		this.createDate = createDate;
 	}
 
-	public BigDecimal getDelFlg() {
-		return this.delFlg;
+	// public BigDecimal getDelFlg() {
+	public String getDelFlg() {
+		if (this.delFlg != null && this.delFlg.intValue() == 1) {
+			return "×";
+		} else {
+			return "○";
+		}
 	}
 
 	public void setDelFlg(BigDecimal delFlg) {
