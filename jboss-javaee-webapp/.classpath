@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="lib/jackson-databind-2.8.5.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-core-2.8.1.jar"/>
 	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/workspace/jboss-javaee-webapp/lib/eclipselink.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

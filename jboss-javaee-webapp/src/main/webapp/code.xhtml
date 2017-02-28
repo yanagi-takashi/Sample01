@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    template="/WEB-INF/templates/default.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
  
 	 Code test2
     <ui:define name="content">
-        <h:dataTable var="__code" value="#{codeMst}"
-            rendered="#{not empty members}"
-            styleClass="simpletablestyle">
-            <h:column>
-                <f:facet name="header">Id</f:facet>
+		<h:dataTable var="__code" value="#{codeMst}"
+			rendered="#{not empty members}" styleClass="simpletablestyle">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
                 #{__code.id.codeId}
             </h:column>
-            <h:column>
-                <f:facet name="header">Name</f:facet>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
                 #{__code.codeName}
             </h:column>
-            <h:column>
-                <f:facet name="header">availableEndDatel</f:facet>
-                <h:outputText value="#{__code.availableEndDate}">
-                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
-                </h:outputText>
-            </h:column>
-            <h:column>
-                <f:facet name="header">availableStartDate #</f:facet>
-                <h:outputText value="#{__code.availableStartDate}" >
-                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
-                </h:outputText>
-            </h:column>
-            <h:column>
-                <f:facet name="header">createDate #</f:facet>
-                <h:outputText value="#{__code.createDate}" >
-                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
-                </h:outputText>
-            </h:column>
-            <h:column>
-                <f:facet name="header">upadateDate #</f:facet>
-                <h:outputText value="#{__code.udpateDate}" >
-                	<f:convertDateTime pattern="yyyy/M/d H:m:s a"/>
-                </h:outputText>
-            </h:column>
-            <h:column>
-                <f:facet name="header">Delflg #</f:facet>
-                <h:outputText value="#{__code.delFlg}" >
-                </h:outputText>
-            </h:column>
-            <f:facet name="footer">
-            REST URL for all codess: <a
-                    href="#{request.contextPath}/">Top</a>
-            </f:facet>
-        </h:dataTable>
-    </ui:define>
+			<h:column>
+				<f:facet name="header">availableEndDatel</f:facet>
+				<h:outputText value="#{__code.availableEndDate}">
+					<f:convertDateTime pattern="yyyy/M/d H:m:s a" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">availableStartDate #</f:facet>
+				<h:outputText value="#{__code.availableStartDate}">
+					<f:convertDateTime pattern="yyyy/M/d H:m:s a" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">createDate #</f:facet>
+				<h:outputText value="#{__code.createDate}">
+					<f:convertDateTime pattern="yyyy/M/d H:m:s a" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">upadateDate #</f:facet>
+				<h:outputText value="#{__code.udpateDate}">
+					<f:convertDateTime pattern="yyyy/M/d H:m:s a" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delflg #</f:facet>
+				<h:outputText value="#{__code.delFlg}">
+				</h:outputText>
+			</h:column>
+			<f:facet name="footer">
+            REST URL for all codess: <a href="#{request.contextPath}/">Top</a>
+			</f:facet>
+		</h:dataTable>
+		<h:form id="reg">
+			<h2>Stored Call</h2>
+			<p>call Sample01.</p>
+
+			<p>
+				<h:panelGrid columns="2">
+					<h:commandButton id="CallStored"
+						action="#{memberController.callStoredSample01}" value="Stored Test01"
+						styleClass="register" />
+					<h:messages styleClass="messages" errorClass="invalid"
+						infoClass="valid" warnClass="warning" globalOnly="true" />
+				</h:panelGrid>
+			</p>
+		</h:form>
+
+	</ui:define>
 </ui:composition>

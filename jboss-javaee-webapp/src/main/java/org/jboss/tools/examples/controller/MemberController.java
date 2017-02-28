@@ -24,8 +24,10 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.jboss.tools.examples.data.StoredSample01;
 import org.jboss.tools.examples.model.Member;
 import org.jboss.tools.examples.service.MemberRegistration;
+
 
 // The @Model stereotype is a convenience mechanism to make this a request-scoped bean that has an
 // EL name
@@ -79,6 +81,15 @@ public class MemberController {
         }
         // This is the root cause message
         return errorMessage;
+    }
+
+    @Inject
+    private StoredSample01 storedSample01;
+
+//    @Produces(MediaType.APPLICATION_JSON)
+    public Integer callStoredSample01() {
+    	System.out.println("--CallStoredSample01----");
+        return storedSample01.callStored01();
     }
 
 }
